@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
     var input = $('input');
-    var button = $('button');
+    var button = $('.wiki');
     var articles = $('.articles');
     var search = " ";
     var searchUrl = 'https://en.wikipedia.org/w/api.php';
@@ -48,4 +48,26 @@
             }
         })
     };
+
+    var SimpleListModel = function (items) {
+        this.items = ko.observableArray(items);
+        this.itemToAdd = ko.observable("");
+        this.addItem = function () {
+            if (this.itemToAdd() != "") {
+                this.items.push(this.itemToAdd()); // Adds the item. Writing to the "items" observableArray causes any associated UI to update.
+                this.itemToAdd(""); // Clears the text box, because it's bound to the "itemToAdd" observable
+            }
+        }.bind(this);  // Ensure that "this" is always this view model
+    };
+
+    ko.applyBindings(new SimpleListModel([]), document.getElementById('form'));
+
+    var testObject = {
+        name: 'law',
+        age: 32
+    };
+    //for multiple view-models on View use: ko.applyBindings(myViewModel, document.getElementById('someElementId')).
+
+    ko.applyBindings(testObject, document.getElementById('123'));
+
 });
