@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "TwilioTester";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IList<TwilioTester.Models.Contact>
+
+<h2>Awesome Text Messaging App!</h2>
+<hr />
+@Html.ActionLink("View all Messages", "GetMessages")
+<br />
+@Html.ActionLink("Send a new message", "SendMessage")
+<br />
+@Html.ActionLink("Add a new Contact", "AddContact")
+
+<h1>Contacts</h1>
+@if (Model.Count() == 0)
+{
+
+    <p>add contact</p>
+}
+else
+{
+@foreach (var contact in Model)
+    {
+    <li>@contact.name</li>
+    <li>@contact.number</li>
+
+    }
+}

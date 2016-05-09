@@ -1,0 +1,12 @@
+﻿@model TwilioTester.Models.Contact
+
+<h2>Save Contact</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.name)
+    @Html.TextBoxFor(model => model.name)
+    @Html.LabelFor(model => model.number)
+    @Html.TextBoxFor(model => model.number)
+    <input type="submit" value="Send" />
+}
