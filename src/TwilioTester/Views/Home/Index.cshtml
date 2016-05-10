@@ -5,15 +5,15 @@
 
 @model IList<TwilioTester.Models.Contact>
 
-<h2>Awesome Text Messaging App!</h2>
+<h2>Text Messaging App using Twilio API</h2>
 <hr />
 @Html.ActionLink("View all Messages", "GetMessages")
 <br />
 @Html.ActionLink("Send a new message", "SendMessage")
 <br />
 @Html.ActionLink("Add a new Contact", "AddContact")
-<br />
-@Html.ActionLink("Wikipedia api call page", "Articles", "Home")
+@*<br />
+@Html.ActionLink("Wikipedia api call page", "Articles", "Home")*@
 
 
 @*<h1>Contacts</h1>
@@ -32,7 +32,7 @@ else
     }
 }*@
 
-<h1>knockout demo</h1>
+@*<h1>knockout demo</h1>
 
 <form id="form" data-bind="submit: addItem">
     New Item:
@@ -42,4 +42,4 @@ else
     <select multiple="multiple" width="50" data-bind="options: items"> </select>
 </form>
 
-<span id='123' data-bind="text: name"></span> is working on this project
+<span id='123' data-bind="text: name"></span> is working on this project*@
