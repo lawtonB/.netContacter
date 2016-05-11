@@ -13,6 +13,6 @@ namespace TwilioTester.Models
         [Key]
         public int Id { get; set; }
         public string name { get; set; }
-        public int number { get; set;  }
+        public string number { get; set;  }
     }
 }

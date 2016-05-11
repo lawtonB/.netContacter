@@ -3,6 +3,15 @@
   "version": 2,
   "targets": {
     "DNX,Version=v4.5.1": {
+      "Antlr/3.4.1.9004": {
+        "type": "package",
+        "compile": {
+          "lib/Antlr3.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/Antlr3.Runtime.dll": {}
+        }
+      },
       "EntityFramework.Commands/7.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -1417,13 +1426,76 @@
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
         }
       },
-      "Newtonsoft.Json/6.0.6": {
+      "Microsoft.Owin/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "3.0.1",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.Cookies/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "3.0.1",
+          "Microsoft.Owin.Security": "3.0.1",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.Cookies.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.Cookies.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.OAuth/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "3.0.1",
+          "Microsoft.Owin.Security": "3.0.1",
+          "Newtonsoft.Json": "6.0.4",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {}
+        }
+      },
+      "Newtonsoft.Json/8.0.3": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Owin/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Owin.dll": {}
         }
       },
       "Remotion.Linq/2.0.1": {
@@ -1654,9 +1726,65 @@
         "runtime": {
           "lib/net45/_._": {}
         }
+      },
+      "Twilio/4.7.1": {
+        "type": "package",
+        "dependencies": {
+          "RestSharp": "105.2.2"
+        },
+        "compile": {
+          "lib/3.5/Twilio.Api.dll": {}
+        },
+        "runtime": {
+          "lib/3.5/Twilio.Api.dll": {}
+        }
+      },
+      "Twilio.Mvc/3.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Twilio": null,
+          "Twilio.TwiML": null
+        },
+        "compile": {
+          "lib/3.5/Twilio.Mvc.dll": {}
+        },
+        "runtime": {
+          "lib/3.5/Twilio.Mvc.dll": {}
+        }
+      },
+      "Twilio.TwiML/3.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/3.5/Twilio.Twiml.dll": {}
+        },
+        "runtime": {
+          "lib/3.5/Twilio.Twiml.dll": {}
+        }
+      },
+      "WebGrease/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Antlr": "3.4.1.9004",
+          "Newtonsoft.Json": "5.0.4"
+        },
+        "compile": {
+          "lib/WebGrease.dll": {}
+        },
+        "runtime": {
+          "lib/WebGrease.dll": {}
+        }
       }
     },
     "DNX,Version=v4.5.1/win7-x86": {
+      "Antlr/3.4.1.9004": {
+        "type": "package",
+        "compile": {
+          "lib/Antlr3.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/Antlr3.Runtime.dll": {}
+        }
+      },
       "EntityFramework.Commands/7.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -3074,13 +3202,76 @@
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
         }
       },
-      "Newtonsoft.Json/6.0.6": {
+      "Microsoft.Owin/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "3.0.1",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.Cookies/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "3.0.1",
+          "Microsoft.Owin.Security": "3.0.1",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.Cookies.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.Cookies.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.OAuth/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "3.0.1",
+          "Microsoft.Owin.Security": "3.0.1",
+          "Newtonsoft.Json": "6.0.4",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {}
+        }
+      },
+      "Newtonsoft.Json/8.0.3": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Owin/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Owin.dll": {}
         }
       },
       "Remotion.Linq/2.0.1": {
@@ -3311,9 +3502,65 @@
         "runtime": {
           "lib/net45/_._": {}
         }
+      },
+      "Twilio/4.7.1": {
+        "type": "package",
+        "dependencies": {
+          "RestSharp": "105.2.2"
+        },
+        "compile": {
+          "lib/3.5/Twilio.Api.dll": {}
+        },
+        "runtime": {
+          "lib/3.5/Twilio.Api.dll": {}
+        }
+      },
+      "Twilio.Mvc/3.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Twilio": null,
+          "Twilio.TwiML": null
+        },
+        "compile": {
+          "lib/3.5/Twilio.Mvc.dll": {}
+        },
+        "runtime": {
+          "lib/3.5/Twilio.Mvc.dll": {}
+        }
+      },
+      "Twilio.TwiML/3.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/3.5/Twilio.Twiml.dll": {}
+        },
+        "runtime": {
+          "lib/3.5/Twilio.Twiml.dll": {}
+        }
+      },
+      "WebGrease/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Antlr": "3.4.1.9004",
+          "Newtonsoft.Json": "5.0.4"
+        },
+        "compile": {
+          "lib/WebGrease.dll": {}
+        },
+        "runtime": {
+          "lib/WebGrease.dll": {}
+        }
       }
     },
     "DNX,Version=v4.5.1/win7-x64": {
+      "Antlr/3.4.1.9004": {
+        "type": "package",
+        "compile": {
+          "lib/Antlr3.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/Antlr3.Runtime.dll": {}
+        }
+      },
       "EntityFramework.Commands/7.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -4731,13 +4978,76 @@
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
         }
       },
-      "Newtonsoft.Json/6.0.6": {
+      "Microsoft.Owin/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "3.0.1",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.Cookies/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "3.0.1",
+          "Microsoft.Owin.Security": "3.0.1",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.Cookies.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.Cookies.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.OAuth/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "3.0.1",
+          "Microsoft.Owin.Security": "3.0.1",
+          "Newtonsoft.Json": "6.0.4",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {}
+        }
+      },
+      "Newtonsoft.Json/8.0.3": {
         "type": "package",
         "compile": {
           "lib/net45/Newtonsoft.Json.dll": {}
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Owin/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Owin.dll": {}
         }
       },
       "Remotion.Linq/2.0.1": {
@@ -4968,10 +5278,68 @@
         "runtime": {
           "lib/net45/_._": {}
         }
+      },
+      "Twilio/4.7.1": {
+        "type": "package",
+        "dependencies": {
+          "RestSharp": "105.2.2"
+        },
+        "compile": {
+          "lib/3.5/Twilio.Api.dll": {}
+        },
+        "runtime": {
+          "lib/3.5/Twilio.Api.dll": {}
+        }
+      },
+      "Twilio.Mvc/3.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Twilio": null,
+          "Twilio.TwiML": null
+        },
+        "compile": {
+          "lib/3.5/Twilio.Mvc.dll": {}
+        },
+        "runtime": {
+          "lib/3.5/Twilio.Mvc.dll": {}
+        }
+      },
+      "Twilio.TwiML/3.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/3.5/Twilio.Twiml.dll": {}
+        },
+        "runtime": {
+          "lib/3.5/Twilio.Twiml.dll": {}
+        }
+      },
+      "WebGrease/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Antlr": "3.4.1.9004",
+          "Newtonsoft.Json": "5.0.4"
+        },
+        "compile": {
+          "lib/WebGrease.dll": {}
+        },
+        "runtime": {
+          "lib/WebGrease.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "Antlr/3.4.1.9004": {
+      "type": "package",
+      "sha512": "c1S+HBE+KYA5EBxtn25LEK02hHPH/tDQ6RviUTTCJpZIPoputtn8ArsQJy9lVJWZOnw37ufByO2Fmf1M8wpr8Q==",
+      "files": [
+        "Antlr.3.4.1.9004.nupkg",
+        "Antlr.3.4.1.9004.nupkg.sha512",
+        "Antlr.nuspec",
+        "lib/Antlr3.Runtime.dll",
+        "lib/Antlr3.Runtime.pdb"
+      ]
+    },
     "EntityFramework.Commands/7.0.0-rc1-final": {
       "type": "package",
       "serviceable": true,
@@ -6078,9 +6446,57 @@
         "Microsoft.Net.Http.Headers.nuspec"
       ]
     },
-    "Newtonsoft.Json/6.0.6": {
+    "Microsoft.Owin/3.0.1": {
       "type": "package",
-      "sha512": "w26uZNyCG5VeoKiEOJ4+9/o8koSofLKwHl7WLreIcp0U6r57L7WiRXmjp8MTKFw6dYNZ9AE0lw69WYbIhUsU9Q==",
+      "serviceable": true,
+      "sha512": "64yZsGN9uRnXNVAyAT4F6KWmdDUJ6yX4uqzxKTdGANKH1oMt0IKZ7THRRa3mXIOo8iSu4tq/DCBUycUY9pXZzw==",
+      "files": [
+        "lib/net45/Microsoft.Owin.dll",
+        "lib/net45/Microsoft.Owin.XML",
+        "Microsoft.Owin.3.0.1.nupkg",
+        "Microsoft.Owin.3.0.1.nupkg.sha512",
+        "Microsoft.Owin.nuspec"
+      ]
+    },
+    "Microsoft.Owin.Security/3.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "LPoUxaTKzmjs97wDCTtBIoRwp30Jkq9UFnoj+EfMFJv+XxjcvHE/D573LRomA568WhvXoI2cUiwhZFvqfbLMVg==",
+      "files": [
+        "lib/net45/Microsoft.Owin.Security.dll",
+        "lib/net45/Microsoft.Owin.Security.XML",
+        "Microsoft.Owin.Security.3.0.1.nupkg",
+        "Microsoft.Owin.Security.3.0.1.nupkg.sha512",
+        "Microsoft.Owin.Security.nuspec"
+      ]
+    },
+    "Microsoft.Owin.Security.Cookies/3.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "l2GRNvO4oyxfpmWtfUYvN3fA4jWduE84UCNqWTj6yhYDSE76wI+W022qTTEMr0VoCDiJ0GGYdvAjQm3xbSsB9Q==",
+      "files": [
+        "lib/net45/Microsoft.Owin.Security.Cookies.dll",
+        "lib/net45/Microsoft.Owin.Security.Cookies.xml",
+        "Microsoft.Owin.Security.Cookies.3.0.1.nupkg",
+        "Microsoft.Owin.Security.Cookies.3.0.1.nupkg.sha512",
+        "Microsoft.Owin.Security.Cookies.nuspec"
+      ]
+    },
+    "Microsoft.Owin.Security.OAuth/3.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "wttlhNSijhsrF7iwxYzxhTr8AYxXI6qoiw3b6dhVhqXOYCDp8OQ5yhHFtWlst+65l7VHduXassspZ974rtLMaw==",
+      "files": [
+        "lib/net45/Microsoft.Owin.Security.OAuth.dll",
+        "lib/net45/Microsoft.Owin.Security.OAuth.XML",
+        "Microsoft.Owin.Security.OAuth.3.0.1.nupkg",
+        "Microsoft.Owin.Security.OAuth.3.0.1.nupkg.sha512",
+        "Microsoft.Owin.Security.OAuth.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/8.0.3": {
+      "type": "package",
+      "sha512": "KGsYQdS2zLH+H8x2cZaSI7e+YZ4SFIbyy1YJQYl6GYBWjf5o4H1A68nxyq+WTyVSOJQ4GqS/DiPE+UseUizgMg==",
       "files": [
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
@@ -6090,16 +6506,24 @@
         "lib/net40/Newtonsoft.Json.xml",
         "lib/net45/Newtonsoft.Json.dll",
         "lib/net45/Newtonsoft.Json.xml",
-        "lib/netcore45/Newtonsoft.Json.dll",
-        "lib/netcore45/Newtonsoft.Json.xml",
         "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.dll",
-        "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.xml",
-        "Newtonsoft.Json.6.0.6.nupkg",
-        "Newtonsoft.Json.6.0.6.nupkg.sha512",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.xml",
+        "Newtonsoft.Json.8.0.3.nupkg",
+        "Newtonsoft.Json.8.0.3.nupkg.sha512",
         "Newtonsoft.Json.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "Owin/1.0.0": {
+      "type": "package",
+      "sha512": "OseTFniKmyp76mEzOBwIKGBRS5eMoYNkMKaMXOpxx9jv88+b6mh1rSaw43vjBOItNhaLFG3d0a20PfHyibH5sw==",
+      "files": [
+        "lib/net40/Owin.dll",
+        "Owin.1.0.0.nupkg",
+        "Owin.1.0.0.nupkg.sha512",
+        "Owin.nuspec"
       ]
     },
     "Remotion.Linq/2.0.1": {
@@ -6268,7 +6692,7 @@
     "System.Diagnostics.DiagnosticSource/4.0.0-beta-23516": {
       "type": "package",
       "serviceable": true,
-      "sha512": "0uDR/UOmFCNPDCyHEPHhCrk6c1iRnDp00YqwSZ8Qf5aaaJjm4WXnf4Q9xZw4OoApsSiODSypDMdpQU24IxR16A==",
+      "sha512": "WHVhr5/p8UDjqNV7l9PCxZgOufE2tO4XOWva9pau9c7PzJJTdB1By6scO5dgHLpmlB/u4y27Y9AzT8AqtG8sxw==",
       "files": [
         "lib/dotnet5.2/System.Diagnostics.DiagnosticSource.dll",
         "lib/dotnet5.2/System.Diagnostics.DiagnosticSource.xml",
@@ -6457,7 +6881,7 @@
     "System.Numerics.Vectors/4.1.1-beta-23516": {
       "type": "package",
       "serviceable": true,
-      "sha512": "FCYCEjc3BXBTpVZTxMqf2m/sGYyDzLwICy5lNKgZzT8WfshJhsTGjJuETwsh1Cwi6bksw9YiTB6yeeWBBJDnTA==",
+      "sha512": "jphbCfQB30LZBC/8kNQtAaaCcKzCFIFnRyUvYapNOozvleUvwI6sYG9d3/WamMcalnNcHDgIlQ713QOv9aweVA==",
       "files": [
         "lib/dotnet5.4/System.Numerics.Vectors.dll",
         "lib/MonoAndroid10/_._",
@@ -6928,6 +7352,59 @@
         "System.Threading.4.0.0.nupkg.sha512",
         "System.Threading.nuspec"
       ]
+    },
+    "Twilio/4.7.1": {
+      "type": "package",
+      "sha512": "wBHTe0DGfwHP3rQflSi58gU901iAPylZy5iMy5eyOg437QTf9mz52gUWpg3PHfXTAdDpcibwBDfEFYjaIyJArg==",
+      "files": [
+        "lib/3.5/Twilio.Api.dll",
+        "lib/3.5/Twilio.Api.pdb",
+        "lib/3.5/Twilio.Api.xml",
+        "lib/SL5/Twilio.Api.Silverlight.dll",
+        "lib/SL5/Twilio.Api.Silverlight.pdb",
+        "lib/SL5/Twilio.Api.Silverlight.xml",
+        "lib/WINDOWSPHONE8/Twilio.Api.WindowsPhone.dll",
+        "lib/WINDOWSPHONE8/Twilio.Api.WindowsPhone.pdb",
+        "lib/WINDOWSPHONE8/Twilio.Api.WindowsPhone.xml",
+        "Twilio.4.7.1.nupkg",
+        "Twilio.4.7.1.nupkg.sha512",
+        "Twilio.nuspec"
+      ]
+    },
+    "Twilio.Mvc/3.2.0": {
+      "type": "package",
+      "sha512": "YkFzjDKoXno6uDn3/E+ZpDqdCBCj5F4wdXDKGxTyAqoJvNKEfNIaVLpDW65bnJY2zw9Cl/kSrAFFOW+BGlwn9Q==",
+      "files": [
+        "lib/3.5/Twilio.Mvc.dll",
+        "lib/3.5/Twilio.Mvc.pdb",
+        "lib/3.5/Twilio.Mvc.xml",
+        "Twilio.Mvc.3.2.0.nupkg",
+        "Twilio.Mvc.3.2.0.nupkg.sha512",
+        "Twilio.Mvc.nuspec"
+      ]
+    },
+    "Twilio.TwiML/3.5.0": {
+      "type": "package",
+      "sha512": "PLxAJoduz3MWjtEmxLZSLfMFHZgFzRidabnuTbjKW1DaJsFhaljuQRk6zxXT8Lm2cnoiUGwW9EKPF6iI63m7ng==",
+      "files": [
+        "lib/3.5/Twilio.Twiml.dll",
+        "lib/3.5/Twilio.Twiml.pdb",
+        "lib/3.5/Twilio.Twiml.xml",
+        "Twilio.TwiML.3.5.0.nupkg",
+        "Twilio.TwiML.3.5.0.nupkg.sha512",
+        "Twilio.TwiML.nuspec"
+      ]
+    },
+    "WebGrease/1.6.0": {
+      "type": "package",
+      "sha512": "1d29edoh4IZPLig82coowiPBS1ltxT97PwEIkOk0dHqtJwD9v5C7gPm6Ot1hKHT86otKm04oDQ00x5c+PyVyxw==",
+      "files": [
+        "lib/WebGrease.dll",
+        "tools/WG.EXE",
+        "WebGrease.1.6.0.nupkg",
+        "WebGrease.1.6.0.nupkg.sha512",
+        "WebGrease.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -6940,7 +7417,16 @@
       "EntityFramework.Core >= 7.0.0-rc1-final",
       "EntityFramework.Commands >= 7.0.0-rc1-final",
       "EntityFramework.MicrosoftSqlServer >= 7.0.0-rc1-final",
-      "Microsoft.AspNet.StaticFiles >= 1.0.0-rc1-final"
+      "Microsoft.AspNet.StaticFiles >= 1.0.0-rc1-final",
+      "Twilio >= 4.7.1",
+      "Newtonsoft.Json >= 8.0.3",
+      "WebGrease >= 1.6.0",
+      "Owin >= 1.0.0",
+      "Microsoft.Owin.Security.OAuth >= 3.0.1",
+      "Microsoft.Owin.Security >= 3.0.1",
+      "Microsoft.Owin.Security.Cookies >= 3.0.1",
+      "Twilio.Mvc >= 3.2.0",
+      "Twilio.TwiML >= 3.5.0"
     ],
     "DNX,Version=v4.5.1": []
   }

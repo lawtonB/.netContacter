@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "TwilioTester";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ActionLink("Call Me", "VoiceCall")
+
+@model TwilioTester.Models.Call
+
+<h2>Make a Call</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.To)
+    @Html.TextBoxFor(model => model.To)
+    @Html.LabelFor(model => model.From)
+    @Html.TextBoxFor(model => model.From)
+    @Html.LabelFor(model => model.Url)
+    @Html.TextBoxFor(model => model.Url)
+    <input type="submit" value="Send!" />
+}
+
+@Html.ActionLink("Back home", "Index")

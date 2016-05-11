@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using TwilioTester.Models;
+using System.Configuration;
+using Twilio.TwiML.Mvc;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -56,5 +58,21 @@ namespace TwilioTester.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult VoiceCall()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult VoiceCall(Call call)
+        {
+            call.VoiceCall();
+            Console.WriteLine("Calling~!");
+            return View();
+        }
+       
+
     }
 }

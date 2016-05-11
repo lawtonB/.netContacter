@@ -1,4 +1,4 @@
-﻿{
+{
   "version": "1.0.0-*",
   "compilationOptions": {
     "emitEntryPoint": true
@@ -13,8 +13,16 @@
     "EntityFramework.Core": "7.0.0-rc1-final",
     "EntityFramework.Commands": "7.0.0-rc1-final",
     "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
-    "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final"
-
+    "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final",
+    "Twilio": "4.7.1",
+    "Newtonsoft.Json": "8.0.3",
+    "WebGrease": "1.6.0",
+    "Owin": "1.0.0",
+    "Microsoft.Owin.Security.OAuth": "3.0.1",
+    "Microsoft.Owin.Security": "3.0.1",
+    "Microsoft.Owin.Security.Cookies": "3.0.1",
+    "Twilio.Mvc": "3.2.0",
+    "Twilio.TwiML": "3.5.0"
   },
 
   "commands": {

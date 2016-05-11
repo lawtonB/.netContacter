@@ -2,6 +2,8 @@
     ViewData["Title"] = "TwilioTester";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using Twilio;
+@using TwilioTester.Models
 
 @model IList<TwilioTester.Models.Contact>
 
@@ -12,11 +14,11 @@
 @Html.ActionLink("Send a new message", "SendMessage")
 <br />
 @Html.ActionLink("Add a new Contact", "AddContact")
-@*<br />
-@Html.ActionLink("Wikipedia api call page", "Articles", "Home")*@
+<br />
+@Html.ActionLink("make a phone call", "VoiceCall")
 
 
-@*<h1>Contacts</h1>
+<h1>Contacts</h1>
 @if (Model.Count() == 0)
 {
 
@@ -30,16 +32,4 @@ else
     <li>@contact.number</li>
 
     }
-}*@
-
-@*<h1>knockout demo</h1>
-
-<form id="form" data-bind="submit: addItem">
-    New Item:
-    <input data-bind='value: itemToAdd, valueUpdate: "afterkeydown"'/>
-    <button type="submit" data-bind="enable: itemToAdd().length> 0">add</button>
-    <p>items:</p>
-    <select multiple="multiple" width="50" data-bind="options: items"> </select>
-</form>
-
-<span id='123' data-bind="text: name"></span> is working on this project*@
+}
