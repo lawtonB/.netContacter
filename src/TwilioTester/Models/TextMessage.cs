@@ -11,21 +11,21 @@ using Twilio;
 
 namespace TwilioTester.Models
 {
-    public class Message
+    public class TextMessage
     {
         public string To { get; set; }
         public string From { get; set; }
         public string Body { get; set; }
         public string Status { get; set; }
 
-        public static List<Message> GetMessages()
+        public static List<TextMessage> GetMessages()
         {
             var client = new RestClient("https://api.twilio.com/2010-04-01");
             var request = new RestRequest("Accounts/" + EnvironmentVariables.AccountSid + "/Messages.json", Method.GET);
             client.Authenticator = new HttpBasicAuthenticator(EnvironmentVariables.AccountSid, EnvironmentVariables.AuthToken);
             var response = client.Execute(request);
             JObject jsonResponse = (JObject)JsonConvert.DeserializeObject(response.Content);
-            var messageList = JsonConvert.DeserializeObject<List<Message>>(jsonResponse["messages"].ToString());
+            var messageList = JsonConvert.DeserializeObject<List<TextMessage>>(jsonResponse["messages"].ToString());
             return messageList;
         }
 

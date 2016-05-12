@@ -4,8 +4,9 @@
 }
 
 @Html.ActionLink("Call Me", "VoiceCall")
-
-@model TwilioTester.Models.Call
+@using Twilio;
+@using TwilioTester.Models;
+@model TwilioTester.Models.PhoneCall
 
 <h2>Make a Call</h2>
 <hr />
@@ -13,11 +14,15 @@
 {
     @Html.LabelFor(model => model.To)
     @Html.TextBoxFor(model => model.To)
-    @Html.LabelFor(model => model.From)
-    @Html.TextBoxFor(model => model.From)
-    @Html.LabelFor(model => model.Url)
-    @Html.TextBoxFor(model => model.Url)
+    @*@Html.LabelFor(model => model.From)*@
+    @*@Html.TextBoxFor(model => model.From)*@
+    @*@Html.LabelFor(model => model.Url)*@
+    @*@Html.TextBoxFor(model => model.Url)*@
     <input type="submit" value="Send!" />
 }
 
 @Html.ActionLink("Back home", "Index")
+
+@{
+    
+}

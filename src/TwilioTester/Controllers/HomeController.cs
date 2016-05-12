@@ -6,6 +6,7 @@ using Microsoft.AspNet.Mvc;
 using TwilioTester.Models;
 using System.Configuration;
 using Twilio.TwiML.Mvc;
+using Twilio;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,7 +25,7 @@ namespace TwilioTester.Controllers
 
         public IActionResult GetMessages()
         {
-            var allMessages = Message.GetMessages();
+            var allMessages = TextMessage.GetMessages();
             return View(allMessages);
         }
 
@@ -34,7 +35,7 @@ namespace TwilioTester.Controllers
         }
 
         [HttpPost]
-        public IActionResult SendMessage(Message newMessage)
+        public IActionResult SendMessage(TextMessage newMessage)
         {
             newMessage.Send();
             return RedirectToAction("Index");
@@ -66,12 +67,29 @@ namespace TwilioTester.Controllers
         }
 
         [HttpPost]
-        public IActionResult VoiceCall(Call call)
+        public IActionResult VoiceCall(PhoneCall phoneCall)
         {
-            call.VoiceCall();
+            
+            var client = new TwilioRestClient(EnvironmentVariables.AccountSid, EnvironmentVariables.AuthToken);
+            if (client.InitiateOutboundCall(
+                "+19713402408", phoneCall.To, "http://demo.twilio.com/welcome/voice/"
+                ).RestException == null)
+            {
+                Console.WriteLine(string.Format("Started call: {0}", client.InitiateOutboundCall(
+                "+19713402408", phoneCall.To, "http://demo.twilio.com/welcome/voice/"
+                ).Sid));
+            }
+            else
+            {
+                Console.WriteLine(string.Format("Error: {0}", client.InitiateOutboundCall(
+                "+19713402408", phoneCall.To, "http://demo.twilio.com/welcome/voice/"
+                ).RestException.Message));
+            }
             Console.WriteLine("Calling~!");
             return View();
         }
+
+
        
 
     }
