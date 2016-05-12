@@ -7,6 +7,8 @@ using TwilioTester.Models;
 using System.Configuration;
 using Twilio.TwiML.Mvc;
 using Twilio;
+using RestSharp;
+using RestSharp.Authenticators;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -49,6 +51,39 @@ namespace TwilioTester.Controllers
         [HttpPost]
         public IActionResult AddContact(Contact contact)
         {
+            string email = contact.email;
+            string firstName = contact.firstName;
+            string lastName = contact.lastName;
+            string number = contact.number;
+
+            string subscribed = Request.Form["subscribed"];
+
+            if (subscribed == "subscribed")
+            {
+                var client = new RestClient("https://us13.api.mailchimp.com/3.0/")
+                {
+                    Authenticator = new HttpBasicAuthenticator("LawtonBrowning", EnvironmentVariables.MailChimpApi)
+
+                };
+
+                RestRequest request = new RestRequest("lists/87d736635b/members/", Method.POST);
+
+                var newMailChimp = new
+                {
+                    email_address = email,
+                    status = subscribed,
+                    merge_fields = new
+                    {
+                        FNAME = firstName,
+                        LNAME = lastName
+                    }
+                };
+                var json = request.JsonSerializer.Serialize(newMailChimp);
+                Console.WriteLine(json);
+                request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);
+                IRestResponse response = client.Execute(request);
+            }
+
             db.Contacts.Add(contact);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -103,9 +138,6 @@ namespace TwilioTester.Controllers
             }
             return View(calls.Calls);
         }
-
-
-       
-
+          
     }
 }

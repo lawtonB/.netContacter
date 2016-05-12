@@ -8,9 +8,10 @@ using TwilioTester.Models;
 namespace TwilioTester.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160512175753_emailcontact")]
+    partial class emailcontact
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
@@ -23,9 +24,7 @@ namespace TwilioTester.Migrations
 
                     b.Property<string>("email");
 
-                    b.Property<string>("firstName");
-
-                    b.Property<string>("lastName");
+                    b.Property<string>("name");
 
                     b.Property<string>("number");
 
