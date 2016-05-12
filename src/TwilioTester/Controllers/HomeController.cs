@@ -89,6 +89,21 @@ namespace TwilioTester.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult CallLog()
+        {
+            var client = new TwilioRestClient(EnvironmentVariables.AccountSid, EnvironmentVariables.AuthToken);
+
+            var calls = client.ListCalls();
+            Console.WriteLine(calls.Calls.Count
+                );
+            if (calls.RestException != null)
+            {
+                Console.WriteLine((string.Format("Error: {0}", calls.RestException.Message)));
+            }
+            return View(calls.Calls);
+        }
+
 
        
 

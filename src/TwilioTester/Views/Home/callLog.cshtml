@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //var callLog = Model as List<Call>;
+}
+@model IEnumerable<Call>
+
+
+
+@using Twilio;
+@*@model IEnumerable<TwilioTester.Models.TextMessage>*@
+
+
+<h3>Call Log</h3>
+
+@foreach (var call in Model)
+{
+    <p>@call.AccountSid</p>
+}
