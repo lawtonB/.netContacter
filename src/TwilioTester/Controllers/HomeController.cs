@@ -86,8 +86,8 @@ namespace TwilioTester.Controllers
             Contact newcontact = new Contact(firstName, lastName, number, email);
             db.Contacts.Add(contact);
             db.SaveChanges();
-            return Json(newcontact);
-            //return RedirectToAction("Index");
+            //return Json(newcontact);
+            return RedirectToAction("Index");
 
         }
 
