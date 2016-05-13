@@ -90,11 +90,6 @@ namespace TwilioTester.Controllers
             
         }
 
-        public IActionResult Articles()
-        {
-            return View();
-        }
-
         [HttpGet]
         public IActionResult VoiceCall()
         {
