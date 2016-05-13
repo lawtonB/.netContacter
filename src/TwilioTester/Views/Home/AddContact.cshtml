@@ -4,16 +4,16 @@
 <hr />
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.firstName)
-    @Html.TextBoxFor(model => model.firstName)
-    @Html.LabelFor(model => model.lastName)
-    @Html.TextBoxFor(model => model.lastName)
-    @Html.LabelFor(model => model.number)
-    @Html.TextBoxFor(model => model.number)
-    @Html.LabelFor(model => model.email)
-    @Html.TextBoxFor(model => model.email)
+    @Html.LabelFor(model => model.FirstName)
+    @Html.TextBoxFor(model => model.FirstName)
+    @Html.LabelFor(model => model.LastName)
+    @Html.TextBoxFor(model => model.LastName)
+    @Html.LabelFor(model => model.Number)
+    @Html.TextBoxFor(model => model.Number)
+    @Html.LabelFor(model => model.Email)
+    @Html.TextBoxFor(model => model.Email)
 
     <label>Register with mailchimp?</label>
     <input type="checkbox" name="subscribed" value="subscribed">
-    <input type="submit" value="Send" />
+    <input type="submit" class="add-user" value="Send" />
 }

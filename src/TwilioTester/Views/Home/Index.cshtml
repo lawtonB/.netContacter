@@ -30,11 +30,12 @@
 else
 {
 @foreach (var contact in Model)
-    {
-    <li>@contact.firstName</li>
-    <li>@contact.lastName</li>
-    <li>@contact.number</li>
-
+{
+    <ul>
+        <p>@contact.FirstName @contact.LastName</p>
+        <p>@contact.Number</p>
+        <p>@contact.Email</p>
+    </ul>
 }
 }
 

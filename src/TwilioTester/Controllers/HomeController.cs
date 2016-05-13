@@ -51,10 +51,10 @@ namespace TwilioTester.Controllers
         [HttpPost]
         public IActionResult AddContact(Contact contact)
         {
-            string email = contact.email;
-            string firstName = contact.firstName;
-            string lastName = contact.lastName;
-            string number = contact.number;
+            string email = contact.Email;
+            string firstName = contact.FirstName;
+            string lastName = contact.LastName;
+            string number = contact.Number;
 
             string subscribed = Request.Form["subscribed"];
 
@@ -83,11 +83,12 @@ namespace TwilioTester.Controllers
                 request.AddParameter("application/json; charset=utf-8", json, ParameterType.RequestBody);
                 IRestResponse response = client.Execute(request);
             }
-
+            Contact newcontact = new Contact(firstName, lastName, number, email);
             db.Contacts.Add(contact);
             db.SaveChanges();
-            return RedirectToAction("Index");
-            
+            return Json(newcontact);
+            //return RedirectToAction("Index");
+
         }
 
         [HttpGet]
